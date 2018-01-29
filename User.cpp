@@ -3,3 +3,7 @@
 //
 
 #include "User.h"
+
+void User::print_me() {
+    cout << "Login: " << this->login << endl;
+}
