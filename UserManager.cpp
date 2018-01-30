@@ -90,6 +90,10 @@ void UserManager::edit() {
     data_vector[choice].set_login(new_login);
 }
 
+void UserManager::add(string login, string password) {
+    data_vector.push_back(User(login, password));
+}
+
 void UserManager::add() {
     string login, password;
 
@@ -97,7 +101,7 @@ void UserManager::add() {
     cin >> login;
     cout << "Type new password: " << endl;
     cin >> password;
-    data_vector.push_back(User(login, password));
+    add(login, password);
 }
 
 void UserManager::del() {
@@ -106,11 +110,20 @@ void UserManager::del() {
 
 void UserManager::login() {
     small_print();
-    cout << "Which do you want to login into?" << endl;
 
     int x;
+    string pass;
+
+    cout << "Which do you want to login into?" << endl;
     cin >> x;
-    this->current_id = x;
+    cout << "Type the password:" << endl;
+    cin >> pass;
+
+    if (data_vector[x].get_password() != pass) {
+        cout << "Wrong password!" << endl;
+        return;
+    } else
+        this->current_id = x;
 
     this->total_logins++;
 }

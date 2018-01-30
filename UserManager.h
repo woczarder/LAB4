@@ -11,6 +11,7 @@
 
 class UserManager {
 public:
+    void add(string, string);
     void add();
     void del();
     void edit();
