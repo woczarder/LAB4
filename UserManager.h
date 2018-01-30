@@ -11,11 +11,23 @@
 
 class UserManager {
 public:
-    void add_user();
-    void del_user();
-    void edit_user();
+    void add();
+    void del();
+    void edit();
+
+    int current_id;
+
+    UserManager();
+
+    void login();
+    void logout();
+
+    void print_orders();
+    void add_order();
 
     void print_users();
+    void small_print();
+    void print_current();
 
     vector<User> data_vector;
 
