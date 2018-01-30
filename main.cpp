@@ -21,6 +21,8 @@ int main() {
         userManager.print_current();
         cout << endl;
 
+        userManager.print_stats();
+
         cout << "Make a decision:" << endl;
         cout << "[1] Print users" << endl;
         cout << "[2] Edit users" << endl;

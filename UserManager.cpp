@@ -8,6 +8,8 @@
 
 UserManager::UserManager() {
     this->current_id = -1;
+    this->total_logins = 69;
+    this->total_order_adds= 10;
 }
 
 void UserManager::load(string filename) {
@@ -109,6 +111,8 @@ void UserManager::login() {
     int x;
     cin >> x;
     this->current_id = x;
+
+    this->total_logins++;
 }
 
 void UserManager::logout() {
@@ -124,5 +128,11 @@ void UserManager::print_orders() {
 void UserManager::add_order() {
     if (this->current_id != -1) {
         data_vector[current_id].add_order();
+        this->total_order_adds++;
     }
+}
+
+void UserManager::print_stats() {
+    cout << "Total logins: " << this->total_logins << endl;
+    cout << "Total order additions: " << this->total_order_adds << endl;
 }

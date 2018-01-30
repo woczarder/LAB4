@@ -33,6 +33,11 @@ public:
 
     void load(string filename);
     void save(string filename);
+
+    // stats
+    int total_logins;
+    int total_order_adds;
+    void print_stats();
 };
 
 
